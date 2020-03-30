@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> AR RVR ART </title>
+        <meta name="viewport" content="width=device-width,height=device-height">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"></script>
+    </head>
+    <body>
+        <a-scene id="scene" arjs='trackingMethod:best; debugUIEnabled:false;' vr-mode-ui="enabled: false" ar-template>
+            <a-assets>
+                <!-- Texture Image -->
+                <img id="texture" src="img/birdone.png">
+            </a-assets>
+            <!--<a-marker preset="hiro">-->
+                <a-marker id="marker2" type='pattern' url='markers/ARArtMarker.patt'>
+                <!--<a-box position='0 0 0' material='color: red;'></a-box>-->
+                <a-plane id="img-map" scale ="12 6 12" position='0 0.2 0' rotation="-90 0 0" material='transparent:true;src:#texture'></a-plane>
+                <!--<a-entity text="font: https://cdn.aframe.io/fonts/mozillavr.fnt; value: Fun Moments"></a-entity>-->
+            </a-marker>     
+            <!-- Camera -->
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
+
